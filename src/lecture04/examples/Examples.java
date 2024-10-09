@@ -1,27 +1,62 @@
 package lecture04.examples;
 
+import java.util.Scanner;
+
 public class Examples {
     public static void main(String[] args) {
+            int week = 11;
+            String day = "Sunday";
+            switch (day) {
+                case "Friday":
+                    System.out.println("Friday ");
+                    break;
+                case "Saturday":
+                    System.out.println("Saturday ");
+                    break;
+                case "Sunday":
+                    System.out.println("Sunday ");
+                    if (week == 11) {
+                        System.out.println("11 week!!!!!");
+                    }
+                    break;
+                default:
+                    System.out.println("Default ");
+            }
+            System.out.println("END!!!");
+
+            if (day == "Friday") {
+                System.out.println("Friday ");
+            } else if (day == "Saturday") {
+                System.out.println("Saturday ");
+            } else if (day == "Sunday") {
+                System.out.println("Sunday ");
+                if (week == 11) {
+                    System.out.println("11 week!!!!!");
+                }
+            } else {
+                System.out.println("Default ");
+            }
     }
 
+
     public static void demoArithmeticOperations() {
-        int num1 = 100;
+        int productsCount = 100;
         int num2 = 200;
+        int result = (productsCount + num2);
+        System.out.println("productsCount + num2: " + result);
+        System.out.println("productsCount - num2: " + (productsCount - num2));
+        System.out.println("productsCount * num2: " + (productsCount * num2));
+        System.out.println("productsCount / num2: " + (productsCount / num2));
+        System.out.println("productsCount % num2: " + (productsCount % num2));
 
-        System.out.println("num1 + num2: " + (num1 + num2));
-        System.out.println("num1 - num2: " + (num1 - num2));
-        System.out.println("num1 * num2: " + (num1 * num2));
-        System.out.println("num1 / num2: " + (num1 / num2));
-        System.out.println("num1 % num2: " + (num1 % num2));
-
-        num1++; // 101
+        productsCount++; // 101
         num2--; // 199
 
-        //Increases num2 after the result is calculated
-        System.out.println(num1 + num2++); // 101 + 199 = 300; num2 + 1 = 200
+        // Increases num2 after the result is calculated
+        System.out.println(productsCount + num2++); // 101 + 199 = 300; num2 + 1 = 200
 
-        //Increases num2 before the result is calculated
-        System.out.println(num1 + (++num2)); // 101 + (200 + 1) = 302
+        // Increases num2 before the result is calculated
+        System.out.println(productsCount + (++num2)); // 101 + (200 + 1) = 302
     }
 
     public static void demoAssignmentOperators() {
@@ -86,12 +121,12 @@ public class Examples {
     }
 
     public static void demoLogicalOperator() {
-        boolean b1 = true;
-        boolean b2 = false;
+        boolean isAdult = true;
+        boolean hasSubscriptionPaid = false;
 
-        System.out.println("b1 && b2: " + (b1 && b2));
-        System.out.println("b1 || b2: " + (b1 || b2));
-        System.out.println("!(b1 && b2): " + !(b1 && b2));
+        System.out.println("isAdult && hasSubscriptionPaid: " + (isAdult && hasSubscriptionPaid));
+        System.out.println("isAdult || hasSubscriptionPaid: " + (isAdult || hasSubscriptionPaid));
+        System.out.println("!(isAdult && hasSubscriptionPaid): " + !(isAdult && hasSubscriptionPaid));
     }
 
     public static void demoOperatorPrecedence() {
@@ -127,9 +162,18 @@ public class Examples {
 
     public static void demoIfStatement() {
         int num = 70;
+        System.out.println("Start!");
         if (num < 100) {
             System.out.println("number is less than 100");
+            int num2222 = 3;
+
+            if (num2222 == 3) {
+                System.out.println("num2222 is equal to 3");
+            }
+        } else {
+            System.out.println("END!");
         }
+        // Continue here if the check in row 131 is false
     }
 
     public static void demoNestedIfStatement() {

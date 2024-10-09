@@ -4,5 +4,4 @@ SKILLO Automation QA Course
 Test change
 
 Hello I'm Teddy
-Change made by Stefan
-
+Change Dani Rebase
