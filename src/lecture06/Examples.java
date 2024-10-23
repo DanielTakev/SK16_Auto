@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Examples {
     public static void main(String[] args) {
-        demoLinkedListOperations();
+        demoStack();
     }
 
     public static void demoArrayDeclarationElementInit() {
@@ -223,6 +223,8 @@ public class Examples {
             // Prints the first element and remove it from the queue
             System.out.println("Removed element: " + queue.poll());
         }
+
+        System.out.println("Queue elements: " + queue);
     }
 
     public static void demoStack() {
@@ -240,8 +242,23 @@ public class Examples {
         System.out.println("Element removed: " + stackOfPlates.pop());
         System.out.println("Stack elements: " + stackOfPlates);
 
-        //Pushing an element onto top of the stack
+        // Pushing an element onto top of the stack
         stackOfPlates.push("Plate5");
         System.out.println("Stack elements: " + stackOfPlates);
+
+        System.out.println("Element removed: " + stackOfPlates.pop());
+        System.out.println("Stack elements: " + stackOfPlates);
+
+        System.out.println("Element removed: " + stackOfPlates.pop());
+        System.out.println("Stack elements: " + stackOfPlates);
+
+        System.out.println("Element removed: " + stackOfPlates.pop());
+        System.out.println("Stack elements: " + stackOfPlates);
+
+        System.out.println("Element removed: " + stackOfPlates.pop());
+        System.out.println("Stack elements: " + stackOfPlates);
+
+//        System.out.println("Element removed: " + stackOfPlates.pop());
+//        System.out.println("Stack elements: " + stackOfPlates);
     }
 }
