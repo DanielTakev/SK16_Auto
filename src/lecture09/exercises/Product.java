@@ -6,7 +6,7 @@ public class Product {
     double price;
     String category;
     int stockQuantity;
-    boolean onSale;
+    boolean isOnSale;
 
     // Constructor to initialize the Product object
     public Product(String name, double price, String category, int stockQuantity) {
@@ -14,7 +14,7 @@ public class Product {
         this.price = price;
         this.category = category;
         this.stockQuantity = stockQuantity;
-        this.onSale = false; // Initially, the product is not on sale
+        this.isOnSale = false; // Initially, the product is not on sale
     }
 
     public static void main(String[] args) {
@@ -35,12 +35,12 @@ public class Product {
 
     // Method to put the product on sale
     public void putOnSale() {
-        this.onSale = true;
+        this.isOnSale = true;
     }
 
     // Method to calculate and return the discounted price if the product is on sale
     public double getDiscountedPrice() {
-        if (onSale && price > 100) {
+        if (isOnSale && price > 100) {
             return price * 0.90; // Apply a 10% discount
         }
         return price; // Return the original price if not on sale or price <= 100
@@ -51,6 +51,7 @@ public class Product {
         System.out.println("Product Name: " + name);
         System.out.println("Category: " + category);
         System.out.println("Price: $" + getDiscountedPrice());
+        System.out.println("On Sale: " + isOnSale);
         System.out.println();
     }
 }

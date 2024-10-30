@@ -2,8 +2,17 @@ package lecture09;
 
 public class Examples {
     public static void main(String[] args) {
-        demoConstructors();
+//        demoConstructors();
+
+        Penguin peshoPingvina = new Penguin("Pesho", 11, true);
+
+        Penguin daniPingvina = new Penguin(false, 33);
+
+        System.out.println(peshoPingvina.age);
+        System.out.println(peshoPingvina.isEngaged);
+        System.out.println(peshoPingvina.name);
     }
+
 
     public static void demoObjectCreation() {
         Cake vanillaCake = new Cake("", 2, 2);

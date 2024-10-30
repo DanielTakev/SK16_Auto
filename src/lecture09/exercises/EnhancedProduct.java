@@ -3,7 +3,7 @@ package lecture09.exercises;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnhancedProduct{
+public class EnhancedProduct {
     // Static attribute to track the current sale category
     private static String categoryOnSale = null;
     // Static list to keep track of all products
@@ -13,14 +13,14 @@ public class EnhancedProduct{
     private String name;
     private double price;
     private String category;
-    private boolean onSale;
+    private boolean isOnSale;
 
     // Constructor
     public EnhancedProduct(String name, double price, String category) {
         this.name = name;
         this.price = price;
         this.category = category;
-        // Add the new EnhancedProductto the list of all products
+        // Add the new EnhancedProduct to the list of all products
         allProducts.add(this);
         updateSaleStatus();
     }
@@ -37,6 +37,17 @@ public class EnhancedProduct{
         for (EnhancedProduct product: allProducts) {
             product.updateSaleStatus();
         }
+    }
+
+    // Method to change the product's category and update its sale status
+    void setCategory(String newCategory) {
+        this.category = newCategory;
+        updateSaleStatus();
+    }
+
+    // Private method to update the sale status of this EnhancedProductbased on the current sale category
+    private void updateSaleStatus() {
+        this.isOnSale = category.equals(categoryOnSale);
     }
 
     // Main method for testing
@@ -73,7 +84,7 @@ public class EnhancedProduct{
 
     // Method to calculate and return the discounted price if the EnhancedProductis on sale
     public double getDiscountedPrice() {
-        if (onSale && price > 100) {
+        if (isOnSale && price > 100) {
             return price * 0.90; // Apply a 10% discount
         }
         return price; // Return the original price if not on sale or price <= 100
@@ -84,16 +95,6 @@ public class EnhancedProduct{
         System.out.println("EnhancedProductName: " + name);
         System.out.println("Category: " + category);
         System.out.println("Price: $" + getDiscountedPrice());
-    }
-
-    // Method to change the product's category and update its sale status
-    void setCategory(String newCategory) {
-        this.category = newCategory;
-        updateSaleStatus();
-    }
-
-    // Private method to update the sale status of this EnhancedProductbased on the current sale category
-    private void updateSaleStatus() {
-        this.onSale = category.equals(categoryOnSale);
+        System.out.println("Is on sale: " + isOnSale);
     }
 }

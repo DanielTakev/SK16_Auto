@@ -3,13 +3,14 @@ package lecture10.examples;
 import java.io.*;
 
 public class Examples {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        testTryFinally("src/lecture10/examples/testFile.txt");
     }
 
-/*    static void testCheckedException() {
-        File file = new File("src/lecture07/exceptions/testFile.txt");
+    static void testCheckedException() throws FileNotFoundException {
+        File file = new File("src/lecture10/examples/testFile.txt");
         FileReader fr = new FileReader(file);
-    }*/
+    }
 
     static void testUncheckedException() {
         int[] num = {1, 2, 3, 4};
@@ -22,10 +23,15 @@ public class Examples {
      */
     static void testTryCatch(String path) {
         File file = new File(path);
-        try {
-            FileReader fileReader = new FileReader(file);
-        } catch (FileNotFoundException e) {
-            System.out.println("The file is not found! Please check the file name and try it again!");
+        try (FileReader fileReader = new FileReader(file);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -37,10 +43,14 @@ public class Examples {
         try {
             if (number % factor == 0)
                 System.out.println(factor + " is a factor of " + number);
-        } catch (ArithmeticException ex) {
-            System.out.println("Arithmetic " + ex);
-        } catch (NumberFormatException ex) {
-            System.out.println("Number Format Exception " + ex);
+
+            // Force a NumberFormatException
+            Integer.parseInt("not_a_number");
+
+        } catch (ArithmeticException myArithmeticException) {
+            System.out.println("Arithmetic " + myArithmeticException);
+        } catch (NumberFormatException myNumberFormatException) {
+            System.out.println("Number Format Exception " + myNumberFormatException);
         }
     }
 
@@ -76,10 +86,11 @@ public class Examples {
             if (number % factor == 0)
                 System.out.println(factor + " is a factor of " + number);
         } catch (ArithmeticException | NumberFormatException ex) {
+            System.out.println("ERROR!");
             throw new IllegalArgumentException("Incorrect input! Please enter only numbers bigger than 0!");
         }
     }
-    
+
     static void testTryFinally(String path) throws IOException {
         FileInputStream myFileInputStream = null;
         BufferedReader myBuffReader = null;
@@ -98,6 +109,7 @@ public class Examples {
             if (myFileInputStream != null) {
                 myFileInputStream.close();
             }
+            System.out.println("FINALLY");
         }
     }
 }
