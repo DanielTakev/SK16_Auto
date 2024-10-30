@@ -26,6 +26,9 @@ public class Book {
         // Creating Book objects
         Book book1 = new Book("1984", "George Orwell", 15.99);
         Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", 10.99);
+
+        Book.displayTotalBooks();
+
         Book book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 12.99);
 
         // Displaying details of each book

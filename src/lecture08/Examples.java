@@ -1,5 +1,8 @@
 package lecture08;
 
+
+import lecture09.Cake;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -146,13 +149,13 @@ public class Examples {
         System.out.println(list);
     }
 
-
     /**
      * Demo return type
      */
     // Method to calculate the sum of two numbers
-    public static int calculateSum(int x, int y) {
-        return x + y;
+    public static int calculateSum(int x, int y, int alaBala1) {
+        System.out.println(x + y);
+        return x + y + alaBala1;
     }
 
     // Method to check if a number is even

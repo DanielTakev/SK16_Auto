@@ -41,7 +41,7 @@ public class Car {
     public static void main(String[] args) {
         // Creating Car objects using different constructors
         Car car1 = new Car();
-        Car car2 = new Car("Toyota", "Corolla");
+        Car car2 = new Car(null, "Corolla");
         Car car3 = new Car("Honda", "Civic", 2022);
         Car car4 = new Car("Ford", "Mustang", 2021, "Red");
         Car car5 = new Car("Tesla", "Model S", 2023, "White", 79999.99);
@@ -61,11 +61,12 @@ public class Car {
 
     // Method to display car details
     public void displayDetails() {
-        System.out.println("Make: " + make);
+        if (make != null) {
+            System.out.println("Make: " + make);
+        }
         System.out.println("Model: " + model);
         System.out.println("Year: " + year);
         System.out.println("Color: " + color);
         System.out.println("Price: $" + price);
     }
 }
-

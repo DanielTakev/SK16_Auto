@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        countWords("Ala bala nica - penguin");
+        int wordsCount = countWords("Ala bala nica - penguin");
     }
 
     public static double findSmallestNumber(double num1, double num2, double num3) {
@@ -19,10 +19,10 @@ public class Exercises {
             smallestNumber = num3;
         }
 
-        return smallestNumber;
+//        return smallestNumber;
 
         // Second option
-        // return Math.min(Math.min(num1, num2), num3);
+         return Math.min(Math.min(num1, num2), num3);
     }
 
     public static double calculateAverageNumber(double num1, double num2, double num3) {

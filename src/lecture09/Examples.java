@@ -6,11 +6,11 @@ public class Examples {
     }
 
     public static void demoObjectCreation() {
-        Cake chocolateCake = new Cake();
-        System.out.println(chocolateCake);
+        Cake vanillaCake = new Cake("", 2, 2);
+        System.out.println(vanillaCake);
 
-        Cake oreoCake = new Cake();
-        System.out.println(oreoCake);
+        Cake vanillaCake2 = new Cake();
+        System.out.println(vanillaCake2);
     }
 
     public static void demoClassAttributes() {
@@ -18,36 +18,38 @@ public class Examples {
         Cake birthdayCake = new Cake();
 
         // Setting initial values
-        birthdayCake.flavor = "Chocolate";
-        birthdayCake.layers = 3;
-        birthdayCake.price = 25.50;
+//        birthdayCake.flavor = "Chocolate";
+        birthdayCake.setFlavor("Chocolate");
+//        birthdayCake.layers = 3;
+        birthdayCake.setLayers(3);
+//        birthdayCake.price = 25.50;
+        birthdayCake.setPrice(25.50);
 
         // Display initial values
         System.out.println("Initial Cake Details:");
-        System.out.println("Flavor: " + birthdayCake.flavor); // Outputs: Flavor: Chocolate
-        System.out.println("Layers: " + birthdayCake.layers); // Outputs: Layers: 3
-        System.out.println("Price: $" + birthdayCake.price); // Outputs: Price: $25.50
+        System.out.println("Flavor: " + birthdayCake.getFlavor()); // Outputs: Flavor: Chocolate
+        System.out.println("Layers: " + birthdayCake.getLayers()); // Outputs: Layers: 3
+        System.out.println("Price: $" + birthdayCake.getPrice()); // Outputs: Price: $25.50
 
         // Modifying values
-        birthdayCake.flavor = "Vanilla";
-        birthdayCake.layers = 4;
-        birthdayCake.price = 30.75;
+        birthdayCake.setFlavor("Vanilla");
+        birthdayCake.setLayers(4);
+        birthdayCake.setPrice(30.75);
 
         // Display modified values
         System.out.println("Modified Cake Details:");
-        System.out.println("Flavor: " + birthdayCake.flavor); // Outputs: Flavor: Vanilla
-        System.out.println("Layers: " + birthdayCake.layers); // Outputs: Layers: 4
-        System.out.println("Price: $" + birthdayCake.price); // Outputs: Price: $30.75
+        System.out.println("Flavor: " + birthdayCake.getFlavor()); // Outputs: Flavor: Vanilla
+        System.out.println("Layers: " + birthdayCake.getLayers()); // Outputs: Layers: 4
+        System.out.println("Price: $" + birthdayCake.getPrice()); // Outputs: Price: $30.75
     }
 
     public static void demoClassMethods() {
         Cake birthdayCake = new Cake();
 
         // Setting initial values
-        birthdayCake.flavor = "Chocolate";
-        birthdayCake.layers = 3;
-        birthdayCake.price = 25.50;
-
+        birthdayCake.setFlavor("Chocolate");
+        birthdayCake.setLayers(3);
+        birthdayCake.setPrice(25.50);
         // Print initial details
         birthdayCake.printDetails();
 
@@ -68,9 +70,13 @@ public class Examples {
         System.out.println("\nCustom Cake Details:");
         customCake.printDetails();
 
-        // Create a Cake object using the parameterized constructor
+//         Create a Cake object using the parameterized constructor
         Cake oreoCake = new Cake("Oreo", 2, 25.3);
         System.out.println("\nOreo Cake Details:");
-        customCake.printDetails();
+        oreoCake.printDetails();
+
+        Cake bananaCake = new Cake("Banana", 11);
+        System.out.println("\nBanana Cake Details:");
+        bananaCake.printDetails(); // Print the default double value
     }
 }
