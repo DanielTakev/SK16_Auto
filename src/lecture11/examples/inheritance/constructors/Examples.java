@@ -2,7 +2,7 @@ package lecture11.examples.inheritance.constructors;
 
 public class Examples {
     public static void main(String[] args) {
-
+        demoInheritanceConstructors();
     }
 
     public static void demoInheritanceConstructors() {

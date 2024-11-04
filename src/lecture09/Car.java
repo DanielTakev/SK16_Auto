@@ -2,7 +2,7 @@ package lecture09;
 
 public class Car {
     // Class attributes
-    String make;
+    private String make;
     String model;
     int year;
     String color;
@@ -25,7 +25,7 @@ public class Car {
 
     // Constructor with make, model, year, and color
     public Car(String make, String model, int year, String color) {
-        this(make, model, year, color, 0.0);
+        this(make, model, year, color, 10.0);
     }
 
     // Constructor with all attributes

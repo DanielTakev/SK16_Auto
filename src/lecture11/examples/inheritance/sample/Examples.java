@@ -34,7 +34,6 @@ public class Examples {
         // The following lines would cause a compile-time error if uncommented,
         // because a Vehicle object cannot access attributes or methods defined in Car.
 
-        // myVehicle.numberOfDoors = 4;      // Error: Cannot find symbol
         // myVehicle.fuelType = "Diesel";    // Error: Cannot find symbol
         // myVehicle.playMusic();            // Error: Cannot find symbol
         // myVehicle.openTrunk();            // Error: Cannot find symbol
