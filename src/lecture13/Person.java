@@ -16,7 +16,7 @@ public abstract class Person {
     private String job;
     private String countryOfResidence;
 
-    public Person(String name, String sex, String religion, String languageSpoken, String job, String nationality, String EGN, String countryOfResidence) throws IllegalArgumentException {
+    public Person(String name, String sex, String religion, String languageSpoken, String job, String nationality, String EGN, String countryOfResidence) {
         if (!isValidEGN(EGN)) {
             throw new IllegalArgumentException("Invalid EGN");
         }
@@ -54,6 +54,7 @@ public abstract class Person {
 
     private LocalDate calculateDateOfBirth(String EGN) {
         String dateOfBirth = EGN.substring(0, 6);
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
         LocalDate parsedDate = LocalDate.parse(dateOfBirth, formatter);
 
@@ -61,7 +62,6 @@ public abstract class Person {
         if (parsedDate.getYear() > LocalDate.now().getYear()) {
             parsedDate = parsedDate.minusYears(100);
         }
-
         return parsedDate;
     }
 

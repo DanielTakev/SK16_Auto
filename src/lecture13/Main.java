@@ -5,9 +5,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Person child = new Child("Alice", "female", "Catholic", "English", "American", "8001011234", "USA");
-        Person bulgarian = new Bulgarian("Ivan", "male", "Orthodox", "Engineer", "7505056789", "Bulgaria");
         Person american = new American("John", "male", "Catholic", "Teacher", "6903123456", "USA");
         Person italian = new Italian("Maria", "female", "Catholic", "Doctor", "5507078901", "Italy");
+
+        Person bulgarian = new Bulgarian("Ivan", "male", "Orthodox", "Engineer", "7505056789", "Bulgaria");
         Bulgarian bashBulgarian = new Bulgarian("Bai", "male", "Ortodox", "Grynchar", "9104110000", "Bulgaria");
 
         child.sayHello();
